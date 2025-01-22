@@ -1,4 +1,3 @@
-
 {
   "shoes": [
     {
@@ -57,63 +56,3 @@
     }
   ]
 }
-
-{
-  "shoes": [
-    {
-      "name": "Nike Air Max",
-      "category": "women",
-      "size": [36, 37, 38, 39, 40],
-      "material": "leather",
-      "season": "winter",
-      "colors": ["black", "white"],
-      "image": "https://www.nike.com/hu/en/w/womens-air-max-shoes-4g797z5e1x6z90poyza6d8hzy7ok"
-    },
-    {
-      "name": "Adidas Ultraboost",
-      "category": "women",
-      "size": [36, 37, 38, 39],
-      "material": "textile",
-      "season": "summer",
-      "colors": ["pink", "blue"],
-      "image": "https://www.adidas.com/us/women-blue%7Cpink-ultraboost"
-    },
-    {
-      "name": "Reebok Classic Leather",
-      "category": "men",
-      "size": [40, 41, 42, 43, 44, 45],
-      "material": "synthetic",
-      "season": "autumn",
-      "colors": ["brown", "black"],
-      "image": "https://www.reebok.com/collections/classic-leather-shoes?current=1&filters=%5B%5B%22Isp-tag-Color%22%2C%22color-brown%22%5D%2C%5B%22Isp-tag-Color%22%2C%22color-black%22%5D%5D"
-    },
-    {
-      "name": "Nike Winter Boots",
-      "category": "men",
-      "size": [41, 42, 43, 44],
-      "material": "leather",
-      "season": "winter",
-      "colors": ["black", "grey"],
-      "image": "https://www.nike.com/hu/en/w/mens-boots-9uquxznik1"
-    },
-    {
-      "name": "Adidas Kids Runner",
-      "category": "kids",
-      "size": [30, 31, 32, 33, 34],
-      "material": "textile",
-      "season": "summer",
-      "colors": ["red", "blue"],
-      "image": "https://www.adidas.com/us/kids-blue%7Cred-running-shoes"
-    },
-    {
-      "name": "Nike Kids Snow Sneakers",
-      "category": "kids",
-      "size": [28, 29, 30, 31, 32],
-      "material": "rubber",
-      "season": "winter",
-      "colors": ["blue", "yellow"],
-      "image": "https://www.nike.com/hu/en/w/kids-cold-weather-shoes-7t42qzv4dhzy7ok"
-    }
-  ]
-}
-

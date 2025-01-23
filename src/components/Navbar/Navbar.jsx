@@ -1,22 +1,28 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom'; 
-import logo from '../../assets/logo.png';
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <div
+            className="flex items-center cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             <img src={logo} alt="Logo" className="h-30 w-20 mr-2" />
           </div>
           <div className="hidden md:flex space-x-4">
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
-                isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                isActive
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-600 hover:text-gray-900"
               }
             >
               Home
@@ -24,7 +30,9 @@ const Navbar = () => {
             <NavLink
               to="/products"
               className={({ isActive }) =>
-                isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                isActive
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-600 hover:text-gray-900"
               }
             >
               Products
@@ -32,7 +40,9 @@ const Navbar = () => {
             <NavLink
               to="/about"
               className={({ isActive }) =>
-                isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                isActive
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-600 hover:text-gray-900"
               }
             >
               About
@@ -40,7 +50,9 @@ const Navbar = () => {
             <NavLink
               to="/contact"
               className={({ isActive }) =>
-                isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                isActive
+                  ? "text-gray-900 font-bold"
+                  : "text-gray-600 hover:text-gray-900"
               }
             >
               Contact
@@ -62,7 +74,9 @@ const Navbar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+                  d={
+                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  }
                 />
               </svg>
             </button>
@@ -72,9 +86,11 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="flex flex-col space-y-2 mt-2">
               <NavLink
-                to="/home"
+                to="/"
                 className={({ isActive }) =>
-                  isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                  isActive
+                    ? "text-gray-900 font-bold"
+                    : "text-gray-600 hover:text-gray-900"
                 }
               >
                 Home
@@ -82,7 +98,9 @@ const Navbar = () => {
               <NavLink
                 to="/products"
                 className={({ isActive }) =>
-                  isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                  isActive
+                    ? "text-gray-900 font-bold"
+                    : "text-gray-600 hover:text-gray-900"
                 }
               >
                 Products
@@ -90,7 +108,9 @@ const Navbar = () => {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                  isActive
+                    ? "text-gray-900 font-bold"
+                    : "text-gray-600 hover:text-gray-900"
                 }
               >
                 About
@@ -98,7 +118,9 @@ const Navbar = () => {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? 'text-gray-900 font-bold' : 'text-gray-600 hover:text-gray-900'
+                  isActive
+                    ? "text-gray-900 font-bold"
+                    : "text-gray-600 hover:text-gray-900"
                 }
               >
                 Contact

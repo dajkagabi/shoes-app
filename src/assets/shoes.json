@@ -7,7 +7,11 @@
       "material": "leather",
       "season": "winter",
       "colors": ["black", "white"],
-      "image": "https://www.nike.com/hu/en/w/womens-air-max-shoes-4g797z5e1x6z90poyza6d8hzy7ok"
+      "images": {
+        "black": "src/assets/images/AIRMB.png",
+        "white": "src/assets/images/AIRM.png"
+      }
+      
     },
     {
       "name": "Adidas Ultraboost",
@@ -16,7 +20,10 @@
       "material": "textile",
       "season": "summer",
       "colors": ["pink", "blue"],
-      "image": "https://www.adidas.com/us/women-blue%7Cpink-ultraboost"
+      "images": {
+        "pink": "src/assets/images/UltraB.png",
+        "blue": "src/assets/images/UltraBb.png"
+      }
     },
     {
       "name": "Reebok Classic Leather",
@@ -25,7 +32,11 @@
       "material": "synthetic",
       "season": "autumn",
       "colors": ["brown", "black"],
-      "image": "https://www.reebok.com/collections/classic-leather-shoes?current=1&filters=%5B%5B%22Isp-tag-Color%22%2C%22color-brown%22%5D%2C%5B%22Isp-tag-Color%22%2C%22color-black%22%5D%5D"
+      "images": {
+        "brown": "src/assets/images/reebokBr.jpg",
+        "black": "src/assets/images/reebokB.jpg"
+      }
+      
     },
     {
       "name": "Nike Winter Boots",
@@ -34,7 +45,10 @@
       "material": "leather",
       "season": "winter",
       "colors": ["black", "grey"],
-      "image": "https://www.nike.com/hu/en/w/mens-boots-9uquxznik1"
+      "images": {
+        "black": "src/assets/images/NkBB.jpg",
+        "grey": "src/assets/images/nikebg.jpg"
+      }
     },
     {
       "name": "Adidas Kids Runner",
@@ -43,7 +57,11 @@
       "material": "textile",
       "season": "summer",
       "colors": ["red", "blue"],
-      "image": "https://www.adidas.com/us/kids-blue%7Cred-running-shoes"
+      "images": {
+        "red": "src/assets/images/kidsrk.png",
+        "reds": "src/assets/images/kidsrK.png",
+        "blue": "src/assets/images/kisdkB.png"
+      }
     },
     {
       "name": "Nike Kids Snow Sneakers",
@@ -51,8 +69,11 @@
       "size": [28, 29, 30, 31, 32],
       "material": "rubber",
       "season": "winter",
-      "colors": ["blue", "yellow"],
-      "image": "https://www.nike.com/hu/en/w/kids-cold-weather-shoes-7t42qzv4dhzy7ok"
+      "colors": ["blue", "grey"],
+      "images": {
+        "blue": "src/assets/images/nikeksnb.png",
+        "grey": "src/assets/images/nikeg.png"
+      }
     }
   ]
 }

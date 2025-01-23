@@ -1,8 +1,10 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { FaShoppingCart } from "react-icons/fa"; // Import the shopping cart icon
 
-const Navbar = () => {
+const Navbar = ({ cartItemCount }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -56,6 +58,17 @@ const Navbar = () => {
               }
             >
               Contact
+            </NavLink>
+            <NavLink
+              to="/cart"
+              className="relative flex items-center text-gray-600 hover:text-gray-900"
+            >
+              <FaShoppingCart className="h-6 w-6" />
+              {cartItemCount > 0 && (
+                <span className="absolute top-0 right-0 inline-block w-6 h-6 bg-red-500 text-white text-center rounded-full">
+                  {cartItemCount}
+                </span>
+              )}
             </NavLink>
           </div>
           <div className="md:hidden">
@@ -125,12 +138,26 @@ const Navbar = () => {
               >
                 Contact
               </NavLink>
+              <NavLink
+                to="/cart"
+                className="relative flex items-center text-gray-600 hover:text-gray-900"
+              >
+                <FaShoppingCart className="h-6 w-6" />
+                {cartItemCount > 0 && (
+                  <span className="absolute top-0 right-0 inline-block w-6 h-6 bg-red-500 text-white text-center rounded-full">
+                    {cartItemCount}
+                  </span>
+                )}
+              </NavLink>
             </div>
           </div>
         )}
       </div>
     </nav>
   );
+};
+Navbar.propTypes = {
+  cartItemCount: PropTypes.number.isRequired,
 };
 
 export default Navbar;

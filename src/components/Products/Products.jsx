@@ -1,7 +1,8 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import ShoesList from '../ShoesList/ShoesList';
 
-const Products = () => {
+const Products = ({ onAddToCart }) => {
   const [category, setCategory] = useState('');
   const [size, setSize] = useState('');
   const [color, setColor] = useState('');
@@ -66,9 +67,13 @@ const Products = () => {
           <option value="green">Green</option>
         </select>
       </div>
-      <ShoesList category={category} size={size} color={color} />
+      <ShoesList category={category} size={size} color={color} onAddToCart={onAddToCart} />
     </div>
   );
 };
+Products.propTypes = {
+  onAddToCart: PropTypes.func.isRequired,
+};
 
 export default Products;
+

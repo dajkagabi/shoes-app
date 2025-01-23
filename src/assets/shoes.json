@@ -10,8 +10,8 @@
       "images": {
         "black": "src/assets/images/AIRMB.png",
         "white": "src/assets/images/AIRM.png"
-      }
-      
+      },
+      "price": 120.00
     },
     {
       "name": "Adidas Ultraboost",
@@ -23,7 +23,8 @@
       "images": {
         "pink": "src/assets/images/UltraB.png",
         "blue": "src/assets/images/UltraBb.png"
-      }
+      },
+      "price": 150.00
     },
     {
       "name": "Reebok Classic Leather",
@@ -35,8 +36,8 @@
       "images": {
         "brown": "src/assets/images/reebokBr.jpg",
         "black": "src/assets/images/reebokB.jpg"
-      }
-      
+      },
+      "price": 90.00
     },
     {
       "name": "Nike Winter Boots",
@@ -48,7 +49,8 @@
       "images": {
         "black": "src/assets/images/NkBB.jpg",
         "grey": "src/assets/images/nikebg.jpg"
-      }
+      },
+      "price": 110.00
     },
     {
       "name": "Adidas Kids Runner",
@@ -61,7 +63,8 @@
         "red": "src/assets/images/kidsrk.png",
         "reds": "src/assets/images/kidsrK.png",
         "blue": "src/assets/images/kisdkB.png"
-      }
+      },
+      "price": 50.00
     },
     {
       "name": "Nike Kids Snow Sneakers",
@@ -73,7 +76,8 @@
       "images": {
         "blue": "src/assets/images/nikeksnb.png",
         "grey": "src/assets/images/nikeg.png"
-      }
+      },
+      "price": 60.00
     }
   ]
 }

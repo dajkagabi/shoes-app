@@ -22,7 +22,7 @@ const Cart = ({ cartItems, onRemoveItem }) => {
                     <p className="text-gray-700">Price: ${item.price?.toFixed(2) || 'N/A'}</p>
                   </div>
                   <button
-                    onClick={() => onRemoveItem(item.id)}
+                    onClick={() => onRemoveItem(item.id, item.selectedColor, item.selectedSize)}
                     className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
                   >
                     Remove

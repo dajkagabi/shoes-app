@@ -14,20 +14,37 @@ function App() {
 
   const handleAddToCart = (shoe) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find(item => item.id === shoe.id && item.selectedColor === shoe.selectedColor && item.selectedSize === shoe.selectedSize);
-      if (existingItem) {
-        return prevItems.map(item =>
-          item.id === shoe.id && item.selectedColor === shoe.selectedColor && item.selectedSize === shoe.selectedSize
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+      const existingItemIndex = prevItems.findIndex(
+        item => item.id === shoe.id && item.selectedColor === shoe.selectedColor && item.selectedSize === shoe.selectedSize
+      );
+
+      if (existingItemIndex >= 0) {
+        const updatedItems = [...prevItems];
+        updatedItems[existingItemIndex].quantity += 1;
+        return updatedItems;
       } else {
-        return [...prevItems, { ...shoe, quantity: 1, price: shoe.price }];
+        return [...prevItems, { ...shoe, quantity: 1 }];
       }
     });
   };
-  const handleRemoveItem = (itemId) => {
-    setCartItems(cartItems.filter(item => item.id !== itemId));
+
+  const handleRemoveItem = (shoeId, selectedColor, selectedSize) => {
+    setCartItems((prevItems) => {
+      const existingItemIndex = prevItems.findIndex(
+        item => item.id === shoeId && item.selectedColor === selectedColor && item.selectedSize === selectedSize
+      );
+
+      if (existingItemIndex >= 0) {
+        const updatedItems = [...prevItems];
+        if (updatedItems[existingItemIndex].quantity > 1) {
+          updatedItems[existingItemIndex].quantity -= 1;
+        } else {
+          updatedItems.splice(existingItemIndex, 1);
+        }
+        return updatedItems;
+      }
+      return prevItems;
+    });
   };
 
   return (

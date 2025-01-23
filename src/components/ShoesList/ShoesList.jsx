@@ -1,7 +1,8 @@
-import  { useState } from 'react';
-import shoesData from '../../assets/shoes.json'; 
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import shoesData from '../../assets/shoes.json';
 
-const ShoesList = () => {
+const ShoesList = ({ category, size, color }) => {
   const [selectedColors, setSelectedColors] = useState(
     shoesData.shoes.map(shoe => shoe.colors[0])
   );
@@ -12,20 +13,26 @@ const ShoesList = () => {
     setSelectedColors(newSelectedColors);
   };
 
+  const filteredShoes = shoesData.shoes.filter(shoe => {
+    return (
+      (category === '' || shoe.category === category) &&
+      (size === '' || shoe.size.includes(parseInt(size))) &&
+      (color === '' || shoe.colors.includes(color))
+    );
+  });
+
+  useEffect(() => {
+    setSelectedColors(filteredShoes.map(shoe => shoe.colors[0]));
+  }, [category, size, color]);
+
   return (
-    <div className="max-w-7xl mx-auto p-4 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-      {shoesData.shoes.map((shoe, index) => {
-        const currentColorImage = shoe.images[selectedColors[index]];
+    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      {filteredShoes.map((shoe, index) => {
+        const currentColor = selectedColors[index] || shoe.colors[0];
+        const currentColorImage = shoe.images[currentColor] || shoe.images["default"];
         return (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
-          >
-            <img
-              src={currentColorImage}
-              alt={shoe.name}
-              className="w-full h-64 object-cover"
-            />
+          <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src={currentColorImage} alt={shoe.name} className="w-full h-64 object-cover" />
             <div className="p-4">
               <h3 className="text-lg font-bold text-gray-800">{shoe.name}</h3>
               <p className="text-gray-600">Category: {shoe.category}</p>
@@ -48,6 +55,12 @@ const ShoesList = () => {
       })}
     </div>
   );
+};
+
+ShoesList.propTypes = {
+  category: PropTypes.string,
+  size: PropTypes.string,
+  color: PropTypes.string,
 };
 
 export default ShoesList;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from 'prop-types';
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { FaShoppingCart } from "react-icons/fa"; // Import the shopping cart icon
+import { FaShoppingCart } from "react-icons/fa"; 
 
 const Navbar = ({ cartItemCount }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +65,7 @@ const Navbar = ({ cartItemCount }) => {
             >
               <FaShoppingCart className="h-6 w-6" />
               {cartItemCount > 0 && (
-                <span className="absolute top-0 right-0 inline-block w-6 h-6 bg-red-500 text-white text-center rounded-full">
+                <span className="absolute top-0 right-0 inline-block w-5 h-5 bg-red-500 text-white text-xs font-bold text-center rounded-full transform translate-x-1/2 -translate-y-1/2">
                   {cartItemCount}
                 </span>
               )}
@@ -144,7 +144,7 @@ const Navbar = ({ cartItemCount }) => {
               >
                 <FaShoppingCart className="h-6 w-6" />
                 {cartItemCount > 0 && (
-                  <span className="absolute top-0 right-0 inline-block w-6 h-6 bg-red-500 text-white text-center rounded-full">
+                  <span className="absolute top-0 right-0 inline-block w-5 h-5 bg-red-500 text-white text-xs font-bold text-center rounded-full transform translate-x-1/2 -translate-y-1/2">
                     {cartItemCount}
                   </span>
                 )}
@@ -156,6 +156,7 @@ const Navbar = ({ cartItemCount }) => {
     </nav>
   );
 };
+
 Navbar.propTypes = {
   cartItemCount: PropTypes.number.isRequired,
 };

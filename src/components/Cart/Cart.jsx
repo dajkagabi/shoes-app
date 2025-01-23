@@ -14,12 +14,19 @@ const Cart = ({ cartItems, onRemoveItem }) => {
             <ul>
               {cartItems.map((item, index) => (
                 <li key={index} className="flex justify-between items-center mb-4">
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-800">{item.name}</h2>
-                    <p className="text-gray-700">Color: {item.selectedColor}</p>
-                    <p className="text-gray-700">Size: {item.selectedSize}</p>
-                    <p className="text-gray-700">Quantity: {item.quantity}</p>
-                    <p className="text-gray-700">Price: ${item.price?.toFixed(2) || 'N/A'}</p>
+                  <div className="flex items-center space-x-4">
+                    <img
+                      src={item.images[item.selectedColor] || item.images.default}
+                      alt={item.name}
+                      className="w-24 h-24 object-cover rounded-md"
+                    />
+                    <div>
+                      <h2 className="text-xl font-bold text-gray-800">{item.name}</h2>
+                      <p className="text-gray-700">Color: {item.selectedColor}</p>
+                      <p className="text-gray-700">Size: {item.selectedSize}</p>
+                      <p className="text-gray-700">Quantity: {item.quantity}</p>
+                      <p className="text-gray-700">Price: ${item.price?.toFixed(2) || 'N/A'}</p>
+                    </div>
                   </div>
                   <button
                     onClick={() => onRemoveItem(item.id, item.selectedColor, item.selectedSize)}
@@ -49,6 +56,7 @@ Cart.propTypes = {
       selectedSize: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired,
       price: PropTypes.number.isRequired,
+      images: PropTypes.object.isRequired // Adjuk hozzá a képadatokat
     })
   ).isRequired,
   onRemoveItem: PropTypes.func.isRequired,

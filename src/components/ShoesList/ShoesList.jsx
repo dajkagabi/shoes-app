@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import shoesData from '../../assets/shoes.json';
 
+/* */
 const ShoesList = ({ category, size, color, onAddToCart }) => {
   const [selectedColors, setSelectedColors] = useState(
     shoesData.shoes.map(shoe => shoe.colors[0])
@@ -35,6 +36,7 @@ const ShoesList = ({ category, size, color, onAddToCart }) => {
     setSelectedSizes(filteredShoes.map(shoe => shoe.size[0]));
   }, [category, size, color]);
 
+  
   return (
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {filteredShoes.map((shoe, index) => {

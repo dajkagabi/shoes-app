@@ -17,13 +17,13 @@ function App() {
       const existingItemIndex = prevItems.findIndex(
         item => item.id === shoe.id && item.selectedColor === shoe.selectedColor && item.selectedSize === shoe.selectedSize
       );
-
+  
       if (existingItemIndex >= 0) {
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex].quantity += 1;
         return updatedItems;
       } else {
-        return [...prevItems, { ...shoe, quantity: 1 }];
+        return [...prevItems, { ...shoe, quantity: 1, images: shoe.images }];
       }
     });
   };
@@ -49,17 +49,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar cartItemCount={cartItems.length} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products onAddToCart={handleAddToCart} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/shoes" element={<ShoesList onAddToCart={handleAddToCart} />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveItem={handleRemoveItem} />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+     <Navbar cartItemCount={cartItems.length} />
+  <div className="flex flex-col min-h-screen">
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/products" element={<Products onAddToCart={handleAddToCart} />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/shoes" element={<ShoesList onAddToCart={handleAddToCart} />} />
+    <Route path="/cart" element={<Cart cartItems={cartItems} onRemoveItem={handleRemoveItem} />} />
+  </Routes>
+  <Footer />
+</div>
+  </BrowserRouter>
   );
 }
 

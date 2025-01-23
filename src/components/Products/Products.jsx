@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ShoesList from '../ShoesList/ShoesList';
 
+/*Kosár kezelés*/
 const Products = ({ onAddToCart }) => {
   const [category, setCategory] = useState('');
   const [size, setSize] = useState('');
@@ -18,7 +19,7 @@ const Products = ({ onAddToCart }) => {
   const handleColorChange = (event) => {
     setColor(event.target.value);
   };
-
+/*Szűrő */
   return (
     <div className="max-w-7xl mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">Products</h1>

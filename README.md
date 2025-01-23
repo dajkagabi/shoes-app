@@ -19,4 +19,3 @@ A Shoes-App egy modern, felhasználóbarát webalkalmazás, amely a legújabb te
 
 - Állapotkezelés: Az állapotkezeléshez a React saját useState hook-ját használja, amely egyszerű és hatékony megoldás.
 
- # Minden hozzájárulás és visszajelzés szívesen fogadom!

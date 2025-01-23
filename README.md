@@ -19,8 +19,4 @@ A Shoes-App egy modern, felhasználóbarát webalkalmazás, amely a legújabb te
 
 - Állapotkezelés: Az állapotkezeléshez a React saját useState hook-ját használja, amely egyszerű és hatékony megoldás.
 
-Kódstruktúra és Navigáció
-A projekt struktúrája világosan rendezett, könnyen átlátható mappaszerkezettel rendelkezik, így a fejlesztők könnyedén megtalálják és szerkeszthetik a szükséges fájlokat. A különböző komponensek moduláris felépítése lehetővé teszi a kód újrafelhasználhatóságát és karbantarthatóságát.
-
-Elérhetőség
-A projekt forráskódja nyílt forráskódú és elérhető a GitHub oldalán: Shoes-App GitHub. Minden hozzájárulás és visszajelzés szívesen fogadott!
+ # Minden hozzájárulás és visszajelzés szívesen fogadom!

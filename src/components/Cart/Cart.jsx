@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
+// Cart komponens, amely megjeleníti a kosár tartalmát és kezeli a tételek eltávolítását
 const Cart = ({ cartItems, onRemoveItem }) => {
+  // A teljes ár kiszámítása a kosárban lévő tételek alapján
   const totalPrice = cartItems.reduce((total, item) => total + (item.price || 0) * item.quantity, 0);
 
   return (
@@ -8,14 +10,17 @@ const Cart = ({ cartItems, onRemoveItem }) => {
       <div className="bg-white shadow-md rounded-lg w-full max-w-2xl p-6">
         <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">Shopping Cart</h1>
         {cartItems.length === 0 ? (
+          // Ha a kosár üres, megjelenik egy üzenet, hogy a kosár üres
           <p className="text-gray-700 text-center">Your cart is empty.</p>
         ) : (
           <div>
             <ul>
               {cartItems.map((item, index) => (
+                // A kosárban lévő tételek listázása
                 <li key={index} className="flex justify-between items-center mb-4">
                   <div className="flex items-center space-x-4">
                     <img
+                      // A kép megjelenítése a kiválasztott szín alapján, vagy az alapértelmezett kép
                       src={item.images[item.selectedColor] || item.images.default}
                       alt={item.name}
                       className="w-24 h-24 object-cover rounded-md"
@@ -29,6 +34,7 @@ const Cart = ({ cartItems, onRemoveItem }) => {
                     </div>
                   </div>
                   <button
+                    // A tétel eltávolítása a kosárból
                     onClick={() => onRemoveItem(item.id, item.selectedColor, item.selectedSize)}
                     className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500"
                   >
@@ -47,6 +53,7 @@ const Cart = ({ cartItems, onRemoveItem }) => {
   );
 };
 
+// PropTypes használata 
 Cart.propTypes = {
   cartItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -56,7 +63,7 @@ Cart.propTypes = {
       selectedSize: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired,
       price: PropTypes.number.isRequired,
-      images: PropTypes.object.isRequired // Adjuk hozzá a képadatokat
+      images: PropTypes.object.isRequired 
     })
   ).isRequired,
   onRemoveItem: PropTypes.func.isRequired,

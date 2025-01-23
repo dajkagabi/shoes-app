@@ -5,6 +5,7 @@ import logo from "../../assets/logo.png";
 import { FaShoppingCart } from "react-icons/fa"; 
 
 const Navbar = ({ cartItemCount }) => {
+  /*Hamburger rész */
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -63,6 +64,7 @@ const Navbar = ({ cartItemCount }) => {
               to="/cart"
               className="relative flex items-center text-gray-600 hover:text-gray-900"
             >
+              {/* Cart icon */}
               <FaShoppingCart className="h-6 w-6" />
               {cartItemCount > 0 && (
                 <span className="absolute top-0 right-0 inline-block w-5 h-5 bg-red-500 text-white text-xs font-bold text-center rounded-full transform translate-x-1/2 -translate-y-1/2">

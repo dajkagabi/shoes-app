@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import shoesData from '../../assets/shoes.json';
 
-/* */
+    /*Shoes lista, */
 const ShoesList = ({ category, size, color, onAddToCart }) => {
   const [selectedColors, setSelectedColors] = useState(
     shoesData.shoes.map(shoe => shoe.colors[0])
@@ -10,19 +10,19 @@ const ShoesList = ({ category, size, color, onAddToCart }) => {
   const [selectedSizes, setSelectedSizes] = useState(
     shoesData.shoes.map(shoe => shoe.size[0])
   );
-
+    /*Kezelőfüggvény, a színváltoztatáshoz */
   const handleColorChange = (shoeIndex, color) => {
     const newSelectedColors = [...selectedColors];
     newSelectedColors[shoeIndex] = color;
     setSelectedColors(newSelectedColors);
   };
-
+    /*Kezelőfüggvény, a méretváltoztatáshoz */
   const handleSizeChange = (shoeIndex, size) => {
     const newSelectedSizes = [...selectedSizes];
     newSelectedSizes[shoeIndex] = size;
     setSelectedSizes(newSelectedSizes);
   };
-
+    /*Szűrés a kategória, méret és szín alapján */
   const filteredShoes = shoesData.shoes.filter(shoe => {
     return (
       (category === '' || shoe.category === category) &&
@@ -30,19 +30,21 @@ const ShoesList = ({ category, size, color, onAddToCart }) => {
       (color === '' || shoe.colors.includes(color))
     );
   });
-
+    /*Ha a kategória, méret vagy szín változi akkor frissíti az állapotokat*/
   useEffect(() => {
     setSelectedColors(filteredShoes.map(shoe => shoe.colors[0]));
     setSelectedSizes(filteredShoes.map(shoe => shoe.size[0]));
   }, [category, size, color]);
 
-  
+
   return (
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {filteredShoes.map((shoe, index) => {
+         // Kiválasztott szín és méret megállapítása az adott cipőhöz
         const currentColor = selectedColors[index] || shoe.colors[0];
         const currentSize = selectedSizes[index] || shoe.size[0];
         const currentColorImage = shoe.images[currentColor] || shoe.images["default"];
+
         return (
           <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
             <img src={currentColorImage} alt={shoe.name} className="w-full h-64 object-cover" />
@@ -88,7 +90,7 @@ const ShoesList = ({ category, size, color, onAddToCart }) => {
     </div>
   );
 };
-
+    /*Prop típusok ellenőrzése */
 ShoesList.propTypes = {
   category: PropTypes.string,
   size: PropTypes.string,

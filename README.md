@@ -1,8 +1,26 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Shoes-App
 
-Currently, two official plugins are available:
+A Shoes-App egy modern, felhasználóbarát webalkalmazás, amely a legújabb technológiai trendek és fejlesztési gyakorlatok alkalmazásával készült. A projekt célja, hogy egy olyan online platformot biztosítson, ahol a felhasználók könnyedén böngészhetnek és vásárolhatnak különféle cipőket.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Főbb Funkciók
+- Kategória alapú szűrés: Lehetőség van a cipők szűrésére különböző kategóriák (férfi, női, gyerek) alapján.
+
+- Méret alapú szűrés: A felhasználók kiválaszthatják a kívánt méreteket, így csak azokat a cipőket látják, amelyek megfelelő méretben elérhetők.
+
+- Szín alapú szűrés: Szűrés a különböző színek szerint, hogy a vásárlók megtalálják a számukra leginkább tetsző árnyalatot.
+
+- Interaktív felhasználói felület: Reszponzív dizájn és könnyen navigálható felhasználói felület a kényelmes böngészési élmény érdekében.
+
+# Technológiai Részletek
+- Front-end: React és TailwindCSS használatával készült, amely biztosítja a gyors és zökkenőmentes felhasználói élményt.
+
+- Routing: React Router integráció a különböző oldalak közötti zökkenőmentes navigációhoz.
+
+- Állapotkezelés: Az állapotkezeléshez a React saját useState hook-ját használja, amely egyszerű és hatékony megoldás.
+
+Kódstruktúra és Navigáció
+A projekt struktúrája világosan rendezett, könnyen átlátható mappaszerkezettel rendelkezik, így a fejlesztők könnyedén megtalálják és szerkeszthetik a szükséges fájlokat. A különböző komponensek moduláris felépítése lehetővé teszi a kód újrafelhasználhatóságát és karbantarthatóságát.
+
+Elérhetőség
+A projekt forráskódja nyílt forráskódú és elérhető a GitHub oldalán: Shoes-App GitHub. Minden hozzájárulás és visszajelzés szívesen fogadott!

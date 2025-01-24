@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
-import videoSource from '../../assets/run-river.mp4'; // Cseréld le a megfelelő videó fájlra
+import videoSource from '../../assets/run-river.mp4';
 
 const Home = () => {
   const navigate = useNavigate();
